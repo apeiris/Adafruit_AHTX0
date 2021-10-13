@@ -24,6 +24,9 @@
 #include <Adafruit_Sensor.h>
 #include <Wire.h>
 
+#define __FILENAME__ (strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__)
+#define logd(FORMAT, ...) printf(FORMAT , __VA_ARGS__)
+
 #define AHTX0_I2CADDR_DEFAULT 0x38   ///< AHT default i2c address
 #define AHTX0_CMD_CALIBRATE 0xE1     ///< Calibration command
 #define AHTX0_CMD_TRIGGER 0xAC       ///< Trigger reading command
